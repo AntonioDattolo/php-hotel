@@ -63,43 +63,32 @@ $hotels = [
         <?php
         $selectOption = $_GET['parking'];
         foreach ($hotels as $hotel) {
-            if($hotel["parking"] == false && $selectOption == "0")
-            echo "<ul class='col-2'>" .
-                $hotel["name"] .
-                "<li>" . " Description: " . $hotel["description"] . "</li>" .
-                "<li>" . " Parking: " . $hotel["parking"] . "</li>" .
-                "<li>" . " Vote: " . $hotel["vote"] .  "</li>" .
-                "<li>" . " Distance To Center: " . $hotel["distance_to_center"] .  "</li>" .
-                "</ul>";
-            elseif($hotel["parking"] == true && $selectOption == "1")
-              echo "<ul class='col-2'>" .
-              $hotel["name"] .
-                 "<li>" . " Description: " . $hotel["description"] . "</li>" .
-                 "<li>" . " Parking: " . $hotel["parking"] . "</li>" .
-                 "<li>" . " Vote: " . $hotel["vote"] .  "</li>" .
-                 "<li>" . " Distance To Center: " . $hotel["distance_to_center"] .  "</li>" .
-                 "</ul>";
-            elseif( $selectOption == "showAll")
-             echo "<ul class='col-2'>" .
-             $hotel["name"] .
-                "<li>" . " Description: " . $hotel["description"] . "</li>" .
-                "<li>" . " Parking: " . $hotel["parking"] . "</li>" .
-                "<li>" . " Vote: " . $hotel["vote"] .  "</li>" .
-                "<li>" . " Distance To Center: " . $hotel["distance_to_center"] .  "</li>" .
-                "</ul>";
+            if ($hotel["parking"] == false && $selectOption == 0)
+                echo "<ul class='col-2'>" .
+                    $hotel["name"] .
+                    "<li>" . " Description: " . $hotel["description"] . "</li>" .
+                    "<li>" . " Parking: " . $hotel["parking"] . "</li>" .
+                    "<li>" . " Vote: " . $hotel["vote"] .  "</li>" .
+                    "<li>" . " Distance To Center: " . $hotel["distance_to_center"] .  "</li>" .
+                    "</ul>";
+            elseif ($hotel["parking"] == true && $selectOption == 1)
+                echo "<ul class='col-2'>" .
+                    $hotel["name"] .
+                    "<li>" . " Description: " . $hotel["description"] . "</li>" .
+                    "<li>" . " Parking: " . $hotel["parking"] . "</li>" .
+                    "<li>" . " Vote: " . $hotel["vote"] .  "</li>" .
+                    "<li>" . " Distance To Center: " . $hotel["distance_to_center"] .  "</li>" .
+                    "</ul>";
+            elseif ($selectOption == "showAll")
+                echo "<ul class='col-2'>" .
+                    $hotel["name"] .
+                    "<li>" . " Description: " . $hotel["description"] . "</li>" .
+                    "<li>" . " Parking: " . $hotel["parking"] . "</li>" .
+                    "<li>" . " Vote: " . $hotel["vote"] .  "</li>" .
+                    "<li>" . " Distance To Center: " . $hotel["distance_to_center"] .  "</li>" .
+                    "</ul>";
         }
 
-        // foreach ($hotels as $hotel) {
-        //     if($hotel["parking"] == false)
-        //     echo "<ul class='col-2'>" .
-        //         $hotel["name"] .
-        //         "<li>" . " Description: " . $hotel["description"] . "</li>" .
-        //         "<li>" . " Parking: " . $hotel["parking"] . "</li>" .
-        //         "<li>" . " Vote: " . $hotel["vote"] .  "</li>" .
-        //         "<li>" . " Distance To Center: " . $hotel["distance_to_center"] .  "</li>" .
-        //         "</ul>";
-        //     else echo " " ;   
-        // }
         ?>
 
      

@@ -39,7 +39,7 @@ $hotels = [
     ],
 
 ];
-
+$selectOption = $_GET['parking'];
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ $hotels = [
     <section class="d-flex container justify-content-between flex-wrap">
         <h1 class="col-12 text-center">Hotels</h1>
         <div class="col-12">
-            <form action="ricerca.php" method="GET">
+            <form  method="GET">
 
                 <select name="parking" >
                     <option value="0">Assente</option>
@@ -76,6 +76,38 @@ $hotels = [
 
      
     </section>
+    <section class="d-flex container justify-content-between flex-wrap">
+        
+        <?php
+        
+        foreach ($hotels as $hotel) {
+            if ($hotel["parking"] == false && $selectOption == 0)
+                echo "<ul class='col-2'>" .
+                    $hotel["name"] .
+                    "<li>" . " Description: " . $hotel["description"] . "</li>" .
+                    "<li>" . " Parking: " . $hotel["parking"] . "</li>" .
+                    "<li>" . " Vote: " . $hotel["vote"] .  "</li>" .
+                    "<li>" . " Distance To Center: " . $hotel["distance_to_center"] .  "</li>" .
+                    "</ul>";
+            elseif ($hotel["parking"] == true && $selectOption == 1)
+                echo "<ul class='col-2'>" .
+                    $hotel["name"] .
+                    "<li>" . " Description: " . $hotel["description"] . "</li>" .
+                    "<li>" . " Parking: " . $hotel["parking"] . "</li>" .
+                    "<li>" . " Vote: " . $hotel["vote"] .  "</li>" .
+                    "<li>" . " Distance To Center: " . $hotel["distance_to_center"] .  "</li>" .
+                    "</ul>";
+            elseif ($selectOption == "showAll")
+                echo "<ul class='col-2'>" .
+                    $hotel["name"] .
+                    "<li>" . " Description: " . $hotel["description"] . "</li>" .
+                    "<li>" . " Parking: " . $hotel["parking"] . "</li>" .
+                    "<li>" . " Vote: " . $hotel["vote"] .  "</li>" .
+                    "<li>" . " Distance To Center: " . $hotel["distance_to_center"] .  "</li>" .
+                    "</ul>";
+        }
+
+        ?>
 
 
 </body>
