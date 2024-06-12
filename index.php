@@ -1,5 +1,19 @@
 <?php
+// risolve waring : undefined array key
+// $selectOption = array_key_exists( 'parking' , $_GET ) ? $_GET['parking'] : '' ;
+// $selectVote = array_key_exists( 'vote' , $_GET ) ? $_GET['vote'] : '' ;
 
+
+//alternativa alla risoluzione del warning
+$default = [
+    'parking' => '',
+    'vote' => '',
+ ];
+
+$_GET = array_replace( $default, $_GET );
+
+$selectOption = $_GET['parking'];
+$selectVote = $_GET['vote'];
 $hotels = [
 
     [
@@ -39,8 +53,6 @@ $hotels = [
     ],
 
 ];
-$selectOption = null;
-$selectVote = null;
 ?>
 
 <!DOCTYPE html>
@@ -76,14 +88,11 @@ $selectVote = null;
 
             </form>
         </div>
-
-     
     </section>
-    <section class="d-flex container justify-content-start flex-wrap">
+    <section class="d-flex container justify-content-start flex-wrap"> 
         
         <?php
-        $selectOption = $_GET['parking'];
-        $selectVote = $_GET['vote'];
+      
         foreach ($hotels as $hotel) {
             if ($selectOption == "showAll" && $hotel["vote"] >= $selectVote)
             echo "<ul class='col-2'>" .
@@ -112,7 +121,7 @@ $selectVote = null;
             else echo "";
         }
         ?>
-
+    </section>
 
 </body>
 
